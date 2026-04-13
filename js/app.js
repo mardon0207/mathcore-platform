@@ -16,20 +16,34 @@ const app = {
 
     translations: {
         ru: {
-            pageTitle: 'MathCore - Подготовка к экзаменам по математике',
+            pageTitle: 'LambdaPi - Академия точных наук',
             navResults: 'Результаты',
             navAdmin: 'Админ',
-            heroEyebrow: 'Учебная платформа по математике',
+            heroTag: 'ПЛАТФОРМА ПОДГОТОВКИ',
             heroTitle: 'Собранная и спокойная подготовка к экзаменам',
-            heroSubtitle: 'Тренируйтесь по направлениям DTM, Milliy Sertifikat и Attestatsiya, переключайте язык и проходите тесты в понятном, аккуратном интерфейсе.',
+            heroSubtitle: 'Профессиональная образовательная среда для эффективного освоения математики. Подготовка к DTM, Milliy Sertifikat и квалификационной аттестации педагогов.',
+            heroCTA: 'Начать обучение',
+            heroDemo: 'Демо-тест',
             heroStatTests: 'тестов в базе',
             heroStatQuestions: 'вопросов доступно',
             heroStatMode: 'режим подготовки',
             heroStatModeValue: 'онлайн',
             examSelect: 'Выберите направление',
+            examSubtitle: 'Специализированные траектории подготовки, адаптированные под конкретные требования экзаменов.',
+            advantageLabel: 'LAMBDAPI ADVANTAGE',
+            advantageTitle: 'Точность в каждой детали обучения',
+            advantageAnalytics: 'Аналитика',
+            advantageAnalyticsDesc: 'Подробный разбор каждой ошибки после теста.',
+            advantageRelevance: 'Актуальность',
+            advantageRelevanceDesc: 'Контент соответствует последним стандартам DTM.',
             examCountLabel: 'тестов',
             questionCountLabel: 'вопросов',
-            openExam: 'Открыть раздел',
+            openExam: 'Перейти к блоку',
+            navCurriculum: 'Программы',
+            navResources: 'Ресурсы',
+            navPricing: 'Тарифы',
+            navSign: 'Войти',
+            navGetStarted: 'Начать',
             listTitle: 'Тесты по направлению',
             back: 'Назад',
             demoBadge: 'Демо',
@@ -130,6 +144,25 @@ const app = {
             adminFilesLabel: 'Fayllarni tanlang (.tex, .txt, rasmlar)',
             adminSave: 'GitHubga saqlash',
             adminStatus: 'Holati',
+            navGetStarted: 'Boshlash',
+            heroTag: 'TAYYORLOV PLATFORMASI',
+            heroTitle: 'Imtihonlarga puxta va tartibli tayyorgarlik',
+            heroSubtitle: 'Matematika bo‘yicha professional ta’lim muhiti. DTM, Milliy sertifikat va o‘qituvchilar attestatsiyasiga samarali tayyorlaning.',
+            heroCTA: 'O‘qishni boshlash',
+            heroDemo: 'Demo test',
+            heroStatTests: 'bazadagi testlar',
+            heroStatQuestions: 'savollar mavjud',
+            heroStatMode: 'tayyorlov rejimi',
+            heroStatModeValue: 'onlayn',
+            examSelect: 'Yo‘nalishni tanlang',
+            examSubtitle: 'Imtihon talablariga moslashtirilgan ixtisoslashtirilgan tayyorgarlik yo‘nalishlari.',
+            advantageLabel: 'LAMBDAPI AFZALLIGI',
+            advantageTitle: 'Ta’limdagi har bir detalda aniqlik',
+            advantageAnalytics: 'Analitika',
+            advantageAnalyticsDesc: 'Testdan so‘ng har bir xato ustida batafsil ishlash imkoniyati.',
+            advantageRelevance: 'Dolzarblik',
+            advantageRelevanceDesc: 'Kontent DTM ning oxirgi standartlariga to‘la mos keladi.',
+            openExam: 'Bo\'limga o\'tish',
             confirmExit: 'Test hali tugamadi. Chiqasizmi?',
             openAnswerPlaceholder: 'Javobni kiriting...'
         }
@@ -137,14 +170,50 @@ const app = {
 
     examMeta: {
         ru: {
-            DTM: { title: 'ДТМ', subtitle: 'Государственные вступительные тесты', chip: 'Базовый поток', accent: 'accent-cyan' },
-            MS: { title: 'Национальный сертификат', subtitle: 'Национальный сертификат по математике', chip: 'Общая математика', accent: 'accent-gold' },
-            Attestatsiya: { title: 'Аттестация', subtitle: 'Подготовка к аттестации преподавателей', chip: 'Профильный блок', accent: 'accent-emerald' }
+            DTM: { 
+                title: 'ДТМ', 
+                subtitle: 'Базовый поток для абитуриентов. Подготовка к государственному тестированию.', 
+                points: ['2 тренировочных теста', '40 тематических вопросов'],
+                icon: 'check-badge',
+                accent: 'accent-cyan' 
+            },
+            MS: { 
+                title: 'Национальный сертификат', 
+                subtitle: 'Общая математика. Подготовка к получению национального сертификата компетенции.', 
+                points: ['1 расширенный тест', '5 эталонных вопросов'],
+                icon: 'medal',
+                accent: 'accent-gold' 
+            },
+            Attestatsiya: { 
+                title: 'Аттестация', 
+                subtitle: 'Профильный блок для преподавателей. Повышение квалификационной категории.', 
+                points: ['10 комплексных тестов', '350 практических вопросов'],
+                icon: 'shield',
+                accent: 'accent-emerald' 
+            }
         },
         uz: {
-            DTM: { title: 'DTM', subtitle: 'Davlat test markazi imtihonlari', chip: 'Asosiy yo‘nalish', accent: 'accent-cyan' },
-            MS: { title: 'Milliy sertifikat', subtitle: 'Matematika bo‘yicha milliy sertifikat', chip: 'Umumiy matematika', accent: 'accent-gold' },
-            Attestatsiya: { title: 'Attestatsiya', subtitle: 'O‘qituvchilar attestatsiyasi uchun tayyorgarlik', chip: 'Mutaxassislik bloki', accent: 'accent-emerald' }
+            DTM: { 
+                title: 'DTM', 
+                subtitle: 'Davlat test markazi imtihonlari. Abituriyentlar uchun asosiy yo\'nalish.',
+                points: ['2 ta mashq testi', '40 ta mavzulashtirilgan savol'],
+                icon: 'check-badge',
+                accent: 'accent-cyan' 
+            },
+            MS: { 
+                title: 'Milliy sertifikat', 
+                subtitle: 'Matematika bo\'yicha milliy sertifikat. Umumiy kompetensiya bahosi.',
+                points: ['1 ta kengaytirilgan test', '5 ta namunaviy savol'],
+                icon: 'medal',
+                accent: 'accent-gold' 
+            },
+            Attestatsiya: { 
+                title: 'Attestatsiya', 
+                subtitle: 'O\'qituvchilar attestatsiyasi. Malaka toifasini oshirish uchun tayyorgarlik.',
+                points: ['10 ta kompleks test', '350 ta amaliy savol'],
+                icon: 'shield',
+                accent: 'accent-emerald' 
+            }
         }
     },
 
@@ -223,17 +292,10 @@ const app = {
         if (navResults) navResults.textContent = current.navResults;
 
         const navAdmin = document.getElementById('nav-admin');
-        if (!navAdmin) {
-            const actions = document.querySelector('.nav-actions');
-            const adminBtn = document.createElement('button');
-            adminBtn.className = 'btn-secondary';
-            adminBtn.id = 'nav-admin';
-            adminBtn.style.opacity = '0.4';
-            adminBtn.textContent = current.navAdmin;
-            adminBtn.onclick = () => this.renderView('admin-login');
-            actions.prepend(adminBtn);
-        } else {
-            navAdmin.textContent = current.navAdmin;
+        if (navAdmin) {
+            navAdmin.textContent = (this.state.currentView === 'admin' || this.state.currentView === 'admin-login') 
+                ? current.adminTitle 
+                : current.navAdmin;
         }
     },
 
@@ -294,41 +356,100 @@ const app = {
 
         switch (viewId) {
             case 'home': {
-                const totals = this.getTotalStats();
+                const stats = this.getGlobalStats();
                 return `
-                    <section class="hero-shell">
-                        <div class="hero-copy">
-                            <span class="hero-eyebrow">${current.heroEyebrow}</span>
+                    <section class="hero-landing">
+                        <div class="hero-content">
+                            <div class="hero-tag">${current.heroTag}</div>
                             <h1 class="hero-title">${current.heroTitle}</h1>
-                            <p class="hero-subtitle">${current.heroSubtitle}</p>
-                            <div class="hero-chips">
-                                <span class="hero-chip">DTM</span>
-                                <span class="hero-chip">Milliy Sertifikat</span>
-                                <span class="hero-chip">Attestatsiya</span>
+                            <p class="hero-description">${current.heroSubtitle}</p>
+                            <div class="hero-btns">
+                                <button class="btn-glow" onclick="document.getElementById('selection').scrollIntoView({behavior:'smooth'})">${current.heroCTA}</button>
+                                <button class="btn-ghost" onclick="app.startDemo()">${current.heroDemo}</button>
                             </div>
                         </div>
-                        <div class="hero-panel glass-container">
-                            <div class="hero-panel-line">
-                                <span>${current.heroStatTests}</span>
-                                <strong>${totals.tests}</strong>
-                            </div>
-                            <div class="hero-panel-line">
-                                <span>${current.heroStatQuestions}</span>
-                                <strong>${totals.questions}</strong>
-                            </div>
-                            <div class="hero-panel-line">
-                                <span>${current.heroStatMode}</span>
-                                <strong>${current.heroStatModeValue}</strong>
+                        <div class="hero-visual">
+                            <div class="stats-card">
+                                <div class="stats-card-header">
+                                    <span class="icon">💻</span>
+                                    <span>System Status</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">${current.heroStatTests}</span>
+                                    <span class="value">${stats.tests}</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">${current.heroStatQuestions}</span>
+                                    <span class="value">${stats.totalQuestions}+</span>
+                                </div>
+                                <div class="platform-load">
+                                    <div class="stat-item">
+                                        <span class="label">Platform Load</span>
+                                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                                            <span style="font-size:0.8rem; font-weight:700;">Active</span>
+                                            <span style="font-size:0.8rem; color:var(--accent);">24%</span>
+                                        </div>
+                                    </div>
+                                    <div class="load-bar"><div class="load-fill"></div></div>
+                                </div>
                             </div>
                         </div>
                     </section>
-                    <section class="glass-container section-panel">
-                        <div class="section-heading">
-                            <h2>${current.examSelect}</h2>
-                            <p>${current.heroSubtitle}</p>
+
+                    <section class="selection-section" id="selection">
+                        <div class="section-header">
+                            <div>
+                                <h2>${current.examSelect}</h2>
+                                <p style="color:var(--text-secondary); margin-top:1rem;">${current.examSubtitle}</p>
+                            </div>
                         </div>
-                        <div class="exam-grid">${this.renderExamCards()}</div>
+                        <div class="selection-grid">
+                            ${this.renderExamCards()}
+                        </div>
                     </section>
+
+                    <section class="advantage-section">
+                        <div class="advantage-grid">
+                            <div class="advantage-content">
+                                <span class="advantage-label">${current.advantageLabel}</span>
+                                <h2 class="advantage-title">${current.advantageTitle}</h2>
+                                <div class="advantage-features">
+                                    <div class="feature-item">
+                                        <h4>${current.advantageAnalytics}</h4>
+                                        <p>${current.advantageAnalyticsDesc}</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>${current.advantageRelevance}</h4>
+                                        <p>${current.advantageRelevanceDesc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advantage-graphic" id="advantage-graphic">
+                                <img src="assets/advantage.png" alt="LambdaPi Advantage">
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer>
+                        <div class="footer-top">
+                            <div class="logo">
+                                <div class="logo-icon">λπ</div>
+                                <span class="logo-wordmark">LambdaPi</span>
+                            </div>
+                            <div class="footer-links">
+                                <span class="footer-link">Integrity</span>
+                                <span class="footer-link">Privacy</span>
+                                <span class="footer-link">Terms</span>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <span>© 2026 LambdaPi. Precision in Pedagogy.</span>
+                            <div style="display:flex; gap:1.5rem;">
+                                <span>🌐</span>
+                                <span>💬</span>
+                            </div>
+                        </div>
+                    </footer>
                 `;
             }
             case 'test-list':
@@ -487,27 +608,33 @@ const app = {
     },
 
     renderExamCards() {
-        return Object.keys(EXAMS_METADATA).map((exam, index) => {
-            const meta = this.getExamMeta(exam);
-            const data = EXAMS_METADATA[exam];
-            const testIds = Object.keys(data);
-            const questionsCount = testIds.reduce((sum, id) => sum + data[id], 0);
-            const current = this.t();
-
+        const current = this.translations[this.state.lang];
+        const meta = this.examMeta[this.state.lang];
+        
+        return Object.entries(EXAMS_METADATA).map(([key, data]) => {
+            const m = meta[key];
+            const icons = { 'shield': '🛡️', 'medal': '🎖️', 'check-badge': '✔️' };
+            const icon = icons[m.icon] || '📦';
+            const points = m.points || [`${Object.keys(data).length} ${current.examCountLabel}`, `${Object.values(data).reduce((a,b)=>a+b,0)} ${current.questionCountLabel}`];
+            
             return `
-                <article class="exam-card glass-container ${meta.accent}" onclick="app.renderView('test-list', { exam: '${exam}' })">
-                    <div class="exam-card-top">
-                        <span class="exam-index">0${index + 1}</span>
-                        <span class="exam-chip">${meta.chip}</span>
+                <div class="exam-card ${m.accent}" onclick="app.renderView('test-list', {exam: '${key}'})">
+                    <div class="card-icon">${icon}</div>
+                    <h3 class="card-title">${m.title}</h3>
+                    <p class="card-desc">${m.subtitle}</p>
+                    <div class="card-points">
+                        ${points.map(p => `
+                            <div class="card-point">
+                                <span class="dot">✦</span>
+                                <span>${p}</span>
+                            </div>
+                        `).join('')}
                     </div>
-                    <h3>${meta.title}</h3>
-                    <p>${meta.subtitle}</p>
-                    <div class="exam-card-stats">
-                        <span>${testIds.length} ${current.examCountLabel}</span>
-                        <span>${questionsCount} ${current.questionCountLabel}</span>
+                    <div class="card-cta">
+                        <span>${current.openExam}</span>
+                        <span>→</span>
                     </div>
-                    <div class="exam-cta">${current.openExam}</div>
-                </article>
+                </div>
             `;
         }).join('');
     },
@@ -1006,6 +1133,29 @@ const app = {
             requestAnimationFrame(animate);
         };
         animate();
+    },
+
+    startDemo() {
+        // Find the first exam that has a demo test
+        for (const exam of Object.keys(EXAMS_METADATA)) {
+            if (EXAMS_METADATA[exam]['demo']) {
+                this.state.exam = exam;
+                this.renderView('quiz', { exam, testId: 'demo' });
+                return;
+            }
+        }
+        // If no demo, go to home
+        this.renderView('home');
+    },
+
+    getGlobalStats() {
+        let tests = 0;
+        let questions = 0;
+        Object.values(EXAMS_METADATA).forEach(category => {
+            tests += Object.keys(category).length;
+            Object.values(category).forEach(qCount => questions += qCount);
+        });
+        return { tests, totalQuestions: questions };
     }
 };
 

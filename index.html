@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathCore</title>
+    <meta name="description" content="LambdaPi — профессиональная платформа подготовки к математическим экзаменам. DTM, Milliy Sertifikat, Attestatsiya.">
+    <meta name="theme-color" content="#020617">
+    <title>LambdaPi — Академия точных наук</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>λ</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
@@ -16,16 +19,17 @@
 
     <header>
         <div class="logo" onclick="app.renderView('home')">
-            <div class="logo-icon">MC</div>
-            <span class="logo-wordmark">MATH<span class="gradient-text">CORE</span></span>
+            <div class="logo-icon">λπ</div>
+            <span class="logo-wordmark">LambdaPi</span>
         </div>
 
-        <div class="nav-actions">
+        <div class="header-actions">
             <div class="lang-switcher">
                 <button class="lang-btn active" data-lang="ru">RU</button>
                 <button class="lang-btn" data-lang="uz">UZ</button>
             </div>
-            <button class="btn-secondary" id="nav-results" onclick="app.renderView('history')">Результаты</button>
+            <button class="btn-ghost" id="nav-results" onclick="app.renderView('history')">Natijalar</button>
+            <button class="btn-glow" id="nav-admin" onclick="app.renderView('admin-login')">Sign In</button>
         </div>
     </header>
 
