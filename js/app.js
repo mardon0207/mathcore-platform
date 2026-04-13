@@ -950,7 +950,7 @@ const app = {
         const token = this.state.githubToken;
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
         
-        const resGet = await fetch(url, { headers: { Authorization: `token ${token}` } });
+        const resGet = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
         let sha = null;
         if (resGet.ok) {
             const data = await resGet.json();
@@ -959,20 +959,29 @@ const app = {
 
         const body = {
             message,
-            content: isBase64 ? content : btoa(unescape(encodeURIComponent(content))),
+            content: isBase64 ? content : this.toBase64(content),
             sha
         };
 
         const resPut = await fetch(url, {
             method: 'PUT',
-            headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+            headers: { 
+                Authorization: `Bearer ${token}`, 
+                'Content-Type': 'application/json',
+                'Accept': 'application/vnd.github+json'
+            },
             body: JSON.stringify(body)
         });
 
         if (!resPut.ok) {
             const err = await resPut.json();
-            throw new Error(err.message || 'GitHub Upload Failed');
+            console.error('GitHub API Error:', err);
+            throw new Error(`${err.message} (${path})`);
         }
+    },
+
+    toBase64(str) {
+        return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => String.fromCharCode('0x' + p1)));
     },
 
     initParticles() {
