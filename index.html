@@ -12,6 +12,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <script src="js/metadata.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="bg-mesh"></div>
@@ -27,9 +28,9 @@
             <div class="lang-switcher">
                 <button class="lang-btn active" data-lang="ru">RU</button>
                 <button class="lang-btn" data-lang="uz">UZ</button>
+                <button class="lang-btn" data-lang="en">EN</button>
             </div>
-            <button class="btn-ghost" id="nav-results" onclick="app.renderView('history')">Natijalar</button>
-            <button class="btn-glow" id="nav-admin" onclick="app.renderView('admin-login')">Sign In</button>
+            <button class="btn-glow" id="nav-login" onclick="app.renderView('login')">Sign In</button>
         </div>
     </header>
 

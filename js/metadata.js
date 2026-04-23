@@ -16,5 +16,8 @@ const EXAMS_METADATA = {
   },
   "MS": {
     "demo": 5
+  },
+  "SAT": {
+    "demo": 44
   }
 };
